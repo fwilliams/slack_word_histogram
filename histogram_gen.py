@@ -11,6 +11,8 @@ parser.add_argument('--limit', type=int, default=0)
 args = parser.parse_args()
 slack_api_token = args.token
 
+assert args.limit >= 0, "Limit cannot be a negative number"
+
 channel_name = args.channel
 channel_id = ""
 user_name = args.username
